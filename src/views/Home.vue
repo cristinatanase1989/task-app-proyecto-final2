@@ -1,5 +1,5 @@
 <template>
-    <h1>Esto es el buen repositorio</h1>
+    <h1>pajina de home</h1>
 </template>
 <script setup>
 </script>
