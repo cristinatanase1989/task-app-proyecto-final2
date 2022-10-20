@@ -13,11 +13,13 @@ export const useAuthStore = defineStore('auth', {
     },
     actions: {
         login() {
-            // TODO cambiar el estado  de autenticacion e id del usuario
+            this.isAuth = true;
+            this.id = id;
         },
 
         logout(){
-            // TODO cambiar el estado de autenticacion e id del usuario
+            this.isAuth = false;
+            this.id = undefined;
         }
     }
 })
