@@ -1,25 +1,27 @@
+//esta es la autentification del usuario//
 import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('auth', {
-    // arrow function recommended for full type inference
-    state: () => {
-        return {
-            // all these properties will have their type inferred automatically
+    state: () => ({
             // Nos indicara si el usuario esta autenticado
             isAuth: false,
             // Guardaremos el id de supabase que nos dara al hacer el login
-            id: undefined
-        }
-    },
-    actions: {
-        login() {
-            this.isAuth = true;
-            this.id = id;
+           user:{
+            email:''
+            // password:'' esto no se si hace falta aqui
+           }
+        
+    }),
+  actions: {
+        login(email) {
+           this.isAuth = true;
+           this.user.email = email;
+      //      this.id= id;
         },
 
-        logout(){
-            this.isAuth = false;
-            this.id = undefined;
-        }
-    }
+       logout(){
+             this.isAuth = false;
+            this.user.email = '';
+       }
+}
 })

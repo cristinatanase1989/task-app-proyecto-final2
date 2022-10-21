@@ -1,68 +1,84 @@
+<!-- <div class="boxPadre">
+    <form @submit.prevent ="registerButton" class="box"> -->
+
 <template>
-  <div class="boxPadre">
-    <form @submit.prevent ="registerButton" class="box">
-     
-<div class="form-group">
-  <label>First Name</label>
-  <input type="text" class="form-control" v-model="first_name" placeholder="First Name"/>
-</div>
-
-<div class="form-group">
-  <label>Email</label>
-  <input type="text" class="form-control"  v-model="last_name" placeholder="Last Name"/>
-</div>
-
-<div class="form-group">
-  <label>Email</label>
-  <input type="text" class="form-control"  v-model="email" placeholder="Email"/>
-</div>
-
-
-<div class="form-group">
-  <label>Password</label>
-  <input type="text" class="form-control"  v-model="password" placeholder="Password"/>
-</div>
-
-<div class="form-group">
-  <label>Confirm Password</label>
-  <input type="text" class="form-control"  v-model="password_confirm" placeholder=" Confirm Password"/>
-</div>
-
-
-       </form>
-<!-- 
-        <div class="boeingCompany">
-          <label class="label">Company</label>
-          <select>
-            <option class="boeing" value="opt1">Norwegian</option>
-            <option class="boeing" value="opt2">KLM</option>
-            <option class="boeing" value="opt2">Lufthansa</option>
-            <option class="boeing" value="opt2">British Airways</option>
-            <option class="boeing" value="opt2">Alitalia</option>
-          </select>
+  <div class="container">
+    <div class="boxPadre">
+      <form class="box">
+        <label class="label">Create account</label>
+        <div class="field">
+          <label class="label">Enter your name</label>
+          <div class="control">
+            <input
+              class="input"
+              type="email"
+              placeholder="e.g. alex@example.com"
+            />
+          </div>
         </div>
 
-        <div class="boeingAircraft">
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="********" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Repet your Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="********" />
+          </div>
+
+          <div class="boeingCompany">
+            <label class="label">Company</label>
+            <select>
+              <option class="boeing" value="opt1">Norwegian</option>
+              <option class="boeing" value="opt2">KLM</option>
+              <option class="boeing" value="opt2">Lufthansa</option>
+              <option class="boeing" value="opt2">British Airways</option>
+              <option class="boeing" value="opt2">Alitalia</option>
+            </select>
+          </div>
+
+          <div class="boeingAircraft">
             <label class="label">Aircraft</label>
-          <select>
-            <option class="boeing" value="opt1">Boeing 737</option>
-            <option class="boeing" value="opt2">Boeing 787 Next Generation</option>
-          </select>
-        </div> -->
-      </div>
+            <select>
+              <option class="boeing" value="opt1">Boeing 737</option>
+              <option class="boeing" value="opt2">
+                Boeing 787 Next Generation
+              </option>
+            </select>
+          </div>
+        </div>
 
-      <button class="button is-primary">Register</button>
-    
-  
+        <button class="button is-primary">Register</button>
+      </form>
+    </div>
+  </div>
 </template>
+
 <script setup>
+// import router from "../router";
+// import { useAuthStore } from "../store";
 
-
-
-const registerButton = (e) =>{
-    e.preventDefault()
-    console.log("Hola")
-}
+// const registerButton = (e) => {
+//   e.preventDefault();
+//   console.log(
+//     "formulario enviado",
+//     firstName.value,
+//     lastName.value,
+//     email.value,
+//     passwordConfirm.value
+//   );
+//   useAuthStore.login(
+//     firstName.value,
+//     lastName.value,
+//     email.value,
+//     passwordConfirm.value
+//   );
+//   router.push({ name: "home" });
+// };
 
 // const data () => {
 //   return {
@@ -71,13 +87,9 @@ const registerButton = (e) =>{
 //     password_confirm: ''
 //   }
 // }
-
-
-
-
 </script>
 <style scoped>
-.boxPadre {
+.container {
   background-color: red;
   display: flex;
   justify-content: center;
@@ -86,18 +98,25 @@ const registerButton = (e) =>{
   padding: 20px;
 }
 
+.label {
+  background-color: aqua;
+}
+
+.boxPadre {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
 .boeing {
   padding: 30px;
 }
-
 .boeingCompany , .boeingAircraft{
   padding-top: 10px;
 }
-
 h1 {
-  background-color: aqua;
-}
-.label{
   background-color: aqua;
 }
 </style>
