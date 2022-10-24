@@ -15,6 +15,13 @@ const routes = [
         path: '/register',
         name: 'createAccount',
         component: () => import('../views/CreateAccount.vue')
+    },
+
+    { 
+        path: '/newTask',
+        name: 'newTask',
+        component: () => import('../views/NewTask.vue')
+
     }
 ]
 

@@ -38,6 +38,7 @@ const authStore = useAuthStore();
 //importamos v-model y ref a las variables, vincular las variables al imput//
 const email = ref('');
 const password = ref('');
+const name = ref('');
 
 const onSubmit = async () => {
   console.log('formulario enviado', email.value, password.value);
@@ -45,14 +46,12 @@ const onSubmit = async () => {
        if (response){
         authStore.login(response);
         router.push({name:'home'})
-}
+
+} else{
+    alert('Introduce tu mail y password.')
+    }
   console.log(response)
-
-  
-
- 
 }
-
 
 
 </script>
@@ -72,4 +71,6 @@ const onSubmit = async () => {
   background-color: rgb(194, 169, 169);
   color: black;
 }
+
+
 </style>

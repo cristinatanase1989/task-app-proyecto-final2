@@ -41,7 +41,7 @@ export const newTask = async (task) => {
     if(response.error){
         return false
     }
-}
+ } // done
 
 export const getTasks = async () => {
     const response = await supabase

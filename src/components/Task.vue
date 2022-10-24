@@ -1,51 +1,68 @@
 <template>
-<div class="mt-5"> 
-    <form @submit.prevent="onSubmit">
-        <div class="control"> 
-        <textarea v-model="message" class="textarea" placeholder="Escribe un post"></textarea>
-        </div>
-        <div class="control">
-            <!-- enviar botton  -->
-            <button type="submit" class="mt-4 button is-info">Añadir tarea</button>
-            <!-- eliminar botton task -->
-            <button @click = "borrarTarea" class="mt-4 button is-danger">Eliminar</button>
-            <!-- editar botton task -->
-            <button @click = "editarTarea" class="mt-4 button is-success">Editar</button>
-            <!-- i agree with term and conditions -->
-             <label class="checkbox">
-                <input type="checkbox">
-                I agree to the <a href="#">terms and conditions</a>
-                </label>
 
-        </div>
-        
-
-    </form>
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{task.title}}
+    </p>
+    <button class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{task.description}}
     </div>
-
-    <PostMessage v-for="post in postStore.posts"
-    
-    :key="post.id" :post="post"/>
+  </div>
+  <form class="box">
+  <div class="field">
+  <div class="control">
+    <h2>Tarea completada</h2>
+    <label class="switch">
+      <input v-model="task.isCompleted" @change="completarTarea" type="checkbox">
+      <span class="slider round"> </span>
+       </label>
+  </div>
+</div>
+</form>
+  <footer class="card-footer">
+    <button @click="editar=true">Editar Tarea</button>
+        <!-- <RouterLink  :to="{name: 'editTask', params:{id: task.id} }" class="card-footer-item">Editar</RouterLink> -->
+    <button @click = "borrarTarea" class="card-footer-item">Eliminar</button>
+  </footer>
+</div>
 </template>
 <script setup>
-import { ref } from 'vue';
-import { usePostsStore } from '../store/posts'
-import { useAuthStore } from '../store/auth'
-import PostMessage from './PostMessage.vue'
-import {deleteTask} from '../api/index'
 
-const postStore = usePostsStore();
+import { ref } from 'vue';
+
+import { useAuthStore } from '../store/auth'
+// import {NewTask} from '../views/NewTask.vue'
+import {deleteTask , updateTask} from '../api/index'
+import {useTaskStore} from '../store'
+
+ const taskStore = useTaskStore();
 const authStore = useAuthStore();
 const message = ref('');
+const title = ref('')
+
 
 const onSubmit = () => {
-postStore.new(message.value , authStore.user.name)
+taskStore.new(message.value , authStore.user.name)
 message.value='';
 }
 
 const borrarTarea = () => {
     deleteTask(props.task.id)
 }
+
+const prop = defineProps({
+  tarea : Object
+
+})
+
 
 </script>
 <style scoped>

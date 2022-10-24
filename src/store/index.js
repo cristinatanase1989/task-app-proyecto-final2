@@ -6,9 +6,9 @@ export * from './task'
 //esta es la autentification del usuario//
 import { defineStore } from 'pinia'
 
-export const usePostsStore = defineStore('posts', {
+export const useTaskStore = defineStore('task', {
     state: () => ({
-            posts : []
+            task : []
         
     }),
   actions: {
