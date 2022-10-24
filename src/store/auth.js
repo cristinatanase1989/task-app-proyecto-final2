@@ -13,10 +13,10 @@ export const useAuthStore = defineStore('auth', {
         
     }),
   actions: {
-        login(email) {
+        login(id) {
            this.isAuth = true;
-           this.user.email = email;
-      //      this.id= id;
+          //  this.user.email = email;
+          this.id= id;
         },
 
        logout(){

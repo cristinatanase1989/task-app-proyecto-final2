@@ -1,4 +1,5 @@
 <template>
+    <h1>esta es la pajina de post</h1>
 <div class="post">
 <header>
     <div class="has-text-weight-bold">{{props.post.user}}</div>
@@ -6,9 +7,14 @@
 </header>
 <div>{{props.post.message}}</div>
 
+
 </div>
 
+
 </template>
+
+
+
 <script setup>
 import { defineProps, computed } from 'vue'
 const props = defineProps({
@@ -25,7 +31,7 @@ header{
 
 .post{
     margin-top: 10px;
-    border-radius: 20%;
+   
     border: solid 1px rgb(82, 153, 224);
     padding: 1rem;
 }

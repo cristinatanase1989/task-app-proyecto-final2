@@ -17,14 +17,14 @@
             <button @click="authStore.logout()" class="buttonIsRed">Cerrar sesion</button>
             <!-- formulario de los mensajes -->
 
-            <Posts />
+            <Task />
         </div>
     </div>
   </div>
 </template>
 <script setup>
 import { useAuthStore } from "../store/auth";
-import Posts from "../components/Posts.vue";
+import Task from "../components/Task.vue";
 
 const authStore = useAuthStore();
 </script>

@@ -1,33 +1,52 @@
-<!-- <template>
-
-    <div class="card">
-      <header class="card-header">
-        <p class="card-header-title">
-          {{task.title}}
-        </p>
-        <button class="card-header-icon" aria-label="more options">
-          <span class="icon">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-          </span>
-        </button>
-      </header>
-      <div class="card-content">
-        <div class="content">
-          {{task.description}}
-          
+<template>
+<div class="mt-5"> 
+    <form @submit.prevent="onSubmit">
+        <div class="control"> 
+        <textarea v-model="message" class="textarea" placeholder="Escribe un post"></textarea>
         </div>
-      </div>
-      <footer class="card-footer">
-        <a href="#" class="card-footer-item">Save</a>
-        <a href="#" class="card-footer-item">Edit</a>
-        <a href="#" class="card-footer-item">Delete</a>
-      </footer>
+        <div class="control">
+            <!-- enviar botton  -->
+            <button type="submit" class="mt-4 button is-info">Añadir tarea</button>
+            <!-- eliminar botton task -->
+            <button @click = "borrarTarea" class="mt-4 button is-danger">Eliminar</button>
+            <!-- editar botton task -->
+            <button @click = "editarTarea" class="mt-4 button is-success">Editar</button>
+            <!-- i agree with term and conditions -->
+             <label class="checkbox">
+                <input type="checkbox">
+                I agree to the <a href="#">terms and conditions</a>
+                </label>
+
+        </div>
+        
+
+    </form>
     </div>
+
+    <PostMessage v-for="post in postStore.posts"
     
-    </template>
-    <script setup>
-    
-    defineProps(["task"])
-    
-    </script>
-    <style scoped></style> -->
+    :key="post.id" :post="post"/>
+</template>
+<script setup>
+import { ref } from 'vue';
+import { usePostsStore } from '../store/posts'
+import { useAuthStore } from '../store/auth'
+import PostMessage from './PostMessage.vue'
+import {deleteTask} from '../api/index'
+
+const postStore = usePostsStore();
+const authStore = useAuthStore();
+const message = ref('');
+
+const onSubmit = () => {
+postStore.new(message.value , authStore.user.name)
+message.value='';
+}
+
+const borrarTarea = () => {
+    deleteTask(props.task.id)
+}
+
+</script>
+<style scoped>
+</style>

@@ -5,7 +5,7 @@
       <label class="label">Sing up</label>
       <div class="field">
         <!-- el placeholder se ve muy poco casi invisible....porque?????? -->
-        <input v-model="mail" class="input" type="email" placeholder="Email" />
+        <input v-model="email" class="input" type="email" placeholder="Email" />
       </div>
       <div class="field">
         <!-- el placeholder se ve muy poco casi invisible....porque?????? -->
@@ -29,6 +29,7 @@
 import {ref} from 'vue';
 import{useRouter} from 'vue-router';
 import {useAuthStore} from '../store/auth';
+import {login} from '../api/index';
 
 
 
@@ -38,11 +39,18 @@ const authStore = useAuthStore();
 const email = ref('');
 const password = ref('');
 
-const onSubmit = () => {
+const onSubmit = async () => {
   console.log('formulario enviado', email.value, password.value);
-  authStore.login(email.value);
-  // esto no me llava al home
-  router.push({name:'home'})
+  const response = await login(email.value,password.value);
+       if (response){
+        authStore.login(response);
+        router.push({name:'home'})
+}
+  console.log(response)
+
+  
+
+ 
 }
 
 

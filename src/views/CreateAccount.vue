@@ -1,93 +1,75 @@
-<!-- <div class="boxPadre">
-    <form @submit.prevent ="registerButton" class="box"> -->
-
 <template>
-  <div class="container">
-    <div class="boxPadre">
-      <form class="box">
-        <label class="label">Create account</label>
-        <div class="field">
-          <label class="label">Enter your name</label>
-          <div class="control">
-            <input
-              class="input"
-              type="email"
-              placeholder="e.g. alex@example.com"
-            />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input class="input" type="password" placeholder="********" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label">Repet your Password</label>
-          <div class="control">
-            <input class="input" type="password" placeholder="********" />
-          </div>
-
-          <div class="boeingCompany">
-            <label class="label">Company</label>
-            <select>
-              <option class="boeing" value="opt1">Norwegian</option>
-              <option class="boeing" value="opt2">KLM</option>
-              <option class="boeing" value="opt2">Lufthansa</option>
-              <option class="boeing" value="opt2">British Airways</option>
-              <option class="boeing" value="opt2">Alitalia</option>
-            </select>
-          </div>
-
-          <div class="boeingAircraft">
-            <label class="label">Aircraft</label>
-            <select>
-              <option class="boeing" value="opt1">Boeing 737</option>
-              <option class="boeing" value="opt2">
-                Boeing 787 Next Generation
-              </option>
-            </select>
-          </div>
-        </div>
-
-        <button class="button is-primary">Register</button>
-      </form>
-    </div>
-  </div>
+   
+   
+  <div class="section">
+      <div class="container">
+          <form class="box" @submit.prevent="onSubmit">
+              <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                      <input v-model="name" class="input" type="text" placeholder="Name">
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                      <input v-model="email" class="input" type="email" placeholder="e.g. alex@example.com" required>
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Contraseña</label>
+                  <div class="control">
+                      <input v-model="pass1" class="input" type="password"  placeholder="*******" required>
+                  </div>
+              </div>
+              <div class="field">
+                  <label class="label">Confirmar contraseña</label>
+                  <div class="control">
+                      <input v-model="pass2" class="input" type="password"  placeholder="*******" required>
+                  </div>
+              </div>
+              <div class="field">
+                  <div class="control">
+                      <input class="button is-link" type="submit" placeholder="Text input">
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div> 
 </template>
-
 <script setup>
-// import router from "../router";
-// import { useAuthStore } from "../store";
+import { ref } from 'vue';
+import { useRouter } from 'vue-router'
+import { registro} from '../api/index'
 
-// const registerButton = (e) => {
-//   e.preventDefault();
-//   console.log(
-//     "formulario enviado",
-//     firstName.value,
-//     lastName.value,
-//     email.value,
-//     passwordConfirm.value
-//   );
-//   useAuthStore.login(
-//     firstName.value,
-//     lastName.value,
-//     email.value,
-//     passwordConfirm.value
-//   );
-//   router.push({ name: "home" });
-// };
 
-// const data () => {
-//   return {
-//     email: '',
-//     password: '',
-//     password_confirm: ''
-//   }
-// }
+const router = useRouter();
+const name = ref('');
+const email = ref('');
+const pass1 = ref('');
+const pass2 = ref('');
+
+
+const onSubmit = async()=> {
+ if(comprobarClave() == true ){
+  await registro(email.value, pass1.value);
+   router.push({ name: 'home'})
+ }
+   
+}
+const comprobarClave = () =>{
+      if (pass1.value !== pass2.value){
+          alert("Las dos contraseñas no coinciden")
+       return false;
+      } else{
+          return true;
+      }
+}
+
+
 </script>
+
+
 <style scoped>
 .container {
   background-color: red;
@@ -110,12 +92,8 @@
   flex-direction: column;
   padding: 20px;
 }
-.boeing {
-  padding: 30px;
-}
-.boeingCompany , .boeingAircraft{
-  padding-top: 10px;
-}
+
+
 h1 {
   background-color: aqua;
 }
