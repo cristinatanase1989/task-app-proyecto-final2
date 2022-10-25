@@ -4,8 +4,17 @@
     <div class="container">
       <article v-if="!authStore.isAuth" class="message is-danger">
         <div class="message-body">
-          <strong>Inicia sesion para entrar en la aplicacion </strong>
-          <router-link :to="{ name: 'login' }"> Ir a Login </router-link>
+          <strong>Are you ready for take off?...Please  </strong>
+          <router-link :to="{ name: 'login' }"> Login </router-link>
+          <div class="earth">
+              <div class="earthInside">
+                
+                  <img src="../../../plane-top-view-png-4.png">
+
+              </div>
+            </div>
+
+
         </div>
       </article>
       <div v-else>
@@ -49,11 +58,51 @@ const authStore = useAuthStore();
   color: black;
   background-color: red;
   border-bottom: none;
-
 }
 
 .buttonIsRed:hover{
   background-color: rgb(80, 57, 193);
   text-transform:capitalize;
 }
+
+
+/* EARTH */
+
+/* aqui es todo  +  */
+.earth{
+
+margin: 0;
+padding: 0;
+position: relative;
+width: 200px;
+height: 200px;
+
+/* hasten;a aqui correcto */
+/* overflow: hidden; */
+}
+
+
+/* aqui es el body */
+.earthInside{
+
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 30vh;
+background-color: blue;
+background-image: url('../../../earth.png'); 
+/* la imajen no functiona para colgarla encima  */
+background-size: cover;
+border-radius: 50%;
+box-shadow: 0 0 50px rgba(0,0,0,0.85);
+
+/* me quede al minuto 1.53 */
+
+/* hasta aqui correcto */
+
+
+}
+
+
+
 </style>
