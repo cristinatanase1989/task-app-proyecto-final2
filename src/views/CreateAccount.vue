@@ -92,12 +92,16 @@ const comprobarClave = () => {
 <style scoped>
 .container {
   /* background-color: red; */
-  /* background-image: url('https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg') ; */
+  
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 20px;
+  height: calc(100vh - 70px);
+  background-size: cover;
+  padding:  20px;
+  width: 50%;
 
 }
 
@@ -111,13 +115,17 @@ object-fit:contain;
 .input{
   background-color: rgb(225, 237, 233);
 }
-.boxPadre {
-  background-color: red;
+.section {
+  background-image: url('https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg') ; 
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px;
+  /* justify-content:right; */
+  /* align-items: end; */
+  /* flex-direction: column; */
+  /* padding: 20px; */
+  height: calc(100vh - 70px);
+  background-size: cover;
+  padding:  20px;
+  width: 50%;
 }
 
 h1 {

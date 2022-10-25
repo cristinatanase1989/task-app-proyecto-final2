@@ -48,5 +48,12 @@ const authStore = useAuthStore();
 .buttonIsRed {
   color: black;
   background-color: red;
+  border-bottom: none;
+
+}
+
+.buttonIsRed:hover{
+  background-color: rgb(80, 57, 193);
+  text-transform:capitalize;
 }
 </style>

@@ -17,9 +17,11 @@
 </template>
 <script setup>
 import { onMounted } from 'vue';
-import { login, newTask } from './api'
-
-onMounted(async () => {
+import { login, newTask } from './api';
+// import router from './router';
+import {useAuthStore} from './store/auth';
+import { useRouter } from 'vue-router';
+//onMounted(async () => {
   // const id = await login('alberto.ramirez@ironhack.com', '1234567');
   // newTask({
   //     user_id: id,
@@ -27,9 +29,31 @@ onMounted(async () => {
   //     description: 'Descripcion de otro task'
   // })
 
-})
+// })
+const authStore = useAuthStore();
+const router = useRouter();
+
+onMounted (async () => {
+  // const appReady = ref(null);
+  try {
+    if (!authStore.user.id) {
+      // appReady.value = true; 
+      router.push({
+        name: 'login'
+      });
+    } else {
+      router.push({
+        name: 'home'
+      })
+    }
+  }
+  catch (error) {
+    console.log(error)
+  }
+});
 
 
+ 
 </script>
 <style scoped>
 ul{

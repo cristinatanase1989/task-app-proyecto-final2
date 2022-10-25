@@ -18,7 +18,7 @@
           v-model="title"
           class="input"
           type="text"
-          placeholder="Inserte un título"
+          placeholder="Escribe tu ruta de vuelo..."
           required
         />
 
@@ -26,27 +26,31 @@
         <textarea
           v-model="message"
           class="textarea"
-          placeholder="Escribe un post"
+          placeholder="Recordar..."
           required
         >
 Description de la tarea</textarea
         >
       </div>
-      <div class="control">
-        <!-- enviar botton  -->
-        <button type="submit" class="mt-4 button is-info">Añadir tarea</button>
-       
-        <!-- cancelar botton task -->
-        <button @click="cancelarTarea" class="mt-4 button is-danger">
-          Cancelar
-        </button>
-  
-        
-       
-     
+      <div class="botonesPadreMyRoster">
+        <div class="control">
+          <!-- enviar botton  -->
+          <button type="submit" class="mt-4 button is-info">
+            Añadir tarea
+          </button>
+
+          <!-- cancelar botton task -->
+          <button @click="cancelarTarea" class="mt-4 button is-danger">
+            Cancelar
+          </button>
+
+        </div>
       </div>
     </form>
   </div>
+  <form>
+    <div class="fotoAzafata"></div>
+  </form>
 </template>
 
 <script setup>
@@ -62,7 +66,6 @@ const props = defineProps({
 });
 // const date = computed(() => props.post.date.toLocaleString())
 
-
 const title = ref("");
 const message = ref("");
 
@@ -70,15 +73,11 @@ const router = useRouter();
 const taskStore = useTaskStore();
 const authStore = useAuthStore();
 
-
-
 const cancelarTarea = () => {
-    title.value = '';
-    message.value = '';
-  router.push({name: 'home'});
-}
-
-
+  title.value = "";
+  message.value = "";
+  router.push({ name: "home" });
+};
 
 const onSubmit = async () => {
   console.log(message.value);
@@ -106,11 +105,33 @@ header {
   border: solid 1px rgb(82, 153, 224);
   padding: 1rem;
 }
-.foto{
-  background-image: url('https://i.etsystatic.com/24291756/r/il/efb60b/4112987344/il_1588xN.4112987344_5smm.jpg');
+.fotoAzafata {
+  background-image: url("https://i.etsystatic.com/24291756/r/il/efb60b/4112987344/il_1588xN.4112987344_5smm.jpg");
   height: calc(100vh - 70px);
   background-size: cover;
-  padding:  20px;
+  padding: 20px;
   width: 50%;
+  /* padding-left: 20%; */
 }
+
+::placeholder {
+  color: brown;
+}
+
+.input,
+textarea {
+  background-color: rgb(225, 231, 231);
+}
+
+.botonesPadreMyRoster {
+  display: flex;
+/* aqui no quiere seprarse si le estoy diciendo al padre que sea space-between */
+  justify-content:space-between; 
+   align-items: center;
+  padding: 20px;
+}
+
+/* .control{
+ 
+} */
 </style>
