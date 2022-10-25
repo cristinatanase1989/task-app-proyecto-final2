@@ -5,10 +5,13 @@ export const useAuthStore = defineStore('auth', {
     state: () => ({
             // Nos indicara si el usuario esta autenticado
             isAuth: false,
+            id: '',
+
             // Guardaremos el id de supabase que nos dara al hacer el login
            user:{
-            email:''
-            // password:'' esto no se si hace falta aqui
+            email:'',
+            id: ''
+        
            }
         
     }),
@@ -17,11 +20,23 @@ export const useAuthStore = defineStore('auth', {
            this.isAuth = true;
           //  this.user.email = email;
           this.id= id;
+          this.user.id=id;
         },
 
        logout(){
              this.isAuth = false;
             this.user.email = '';
        }
-}
+},
+
+persist: {
+  enabled: true,
+  strategies: [
+    {
+      key: 'user',
+      storage: localStorage,
+    },
+  ],
+},
+
 })

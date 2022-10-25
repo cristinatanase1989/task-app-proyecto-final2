@@ -2,7 +2,7 @@
   <div class="section">
     <div class="container">
       <form @submit.prevent="onSubmit">  
-      <label class="label">Sing up</label>
+      <label class="label">Sing In</label>
       <div class="field">
         <!-- el placeholder se ve muy poco casi invisible....porque?????? -->
         <input v-model="email" class="input" type="email" placeholder="Email" />
@@ -55,6 +55,8 @@ const onSubmit = async () => {
 
 
 </script>
+
+
 <style scoped>
 .section {
   background-color: red;
@@ -63,6 +65,7 @@ const onSubmit = async () => {
   align-items: center;
   flex-direction: column;
   padding: 20px;
+
 }
 .is-success {
   background-color: blue;
@@ -73,4 +76,9 @@ const onSubmit = async () => {
 }
 
 
+body{
+  background-image: url('https://i.etsystatic.com/24291756/r/il/efb60b/4112987344/il_1588xN.4112987344_5smm.jpg');
+height: 100%;
+
+}
 </style>

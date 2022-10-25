@@ -15,6 +15,7 @@ export const useTaskStore = defineStore('task', {
         setTask(task) {
             //TODO guardar en el stado las task que nos de supabase
             this.tasks = task
+            
         },
 
         updateTask(id, task) {
@@ -25,8 +26,8 @@ export const useTaskStore = defineStore('task', {
                     return true
                 }
              })
-             this.tasks[index].title=task.title
-             this.tasks[index].description=task.description
+             this.tasks[index].title = task.title
+             this.tasks[index].description = task.description
         
         },
 
