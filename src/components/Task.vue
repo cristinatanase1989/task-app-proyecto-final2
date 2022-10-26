@@ -1,7 +1,7 @@
 <template>
   <form v-if="editar" @submit.prevent="editarTarea">
       <div class="control">
-        <label class="label">Título*</label>
+        <label class="label">Títle*</label>
 
         <input
           v-model="title"
@@ -11,7 +11,7 @@
           required
         />
 
-        <label class="label">Description de la tarea*</label>
+        <label class="label">Task Description*</label>
         <textarea
           v-model="description"
           class="textarea"
@@ -23,12 +23,12 @@ Description de la tarea</textarea
       </div>
       <div class="control">
         <!-- enviar botton  -->
-        <button type="submit" class="mt-4 button is-info">OK</button>
+        <button type="submit" class="mt-4 button is-info">Submit</button>
          <!-- nuevo -->
-         <button class="button is-success is-rounded">Completar</button>
+         <button class="mt-4 button is-link">Save changes</button>
         <!-- cancelar botton task -->
         <button @click="cancelarTarea" class="mt-4 button is-danger">
-          Cancelar
+          Cancel
         </button>
   
         
@@ -53,7 +53,7 @@ Description de la tarea</textarea
         {{props.task.description }}
       </div>
     </div>
-    <form class="box">
+    <form>
       <div class="field">
         <div class="control">
           <!-- <h2>Tarea completada</h2>
@@ -69,7 +69,7 @@ Description de la tarea</textarea
       </div>
     </form>
     <footer class="card-footer">
-      <button @click="editar = true" class="editar">Editar Tarea</button>
+      <button @click="editar = true" class="button is-warning is-active">Edit Task</button>
       <!-- <RouterLink
         :to="{ name: 'editTask', params: { id: task.id } }"
         class="card-footer-item"
@@ -77,9 +77,9 @@ Description de la tarea</textarea
       > -->
 
        <!-- nuevo -->
-       <button @click="completarTarea" class="button is-success is-rounded">Completar</button>
+       <button @click="completarTarea" class="button is-success">Complet task</button>
 
-      <button @click="borrarTarea" class="card-footer-item">Eliminar</button>
+      <button @click="borrarTarea" class="button is-danger is-active">Delete</button>
     </footer>
   </div>
 </template>
@@ -140,10 +140,40 @@ const editarTarea = () => {
 
 <style scoped>
 .card-footer-item{
-  background-color: rgb(84, 195, 246);
+  background-color: rgb(50, 131, 168);
 }
 
+
+.card-footer{
+  background-color: red;
+  display: flex;
+  justify-content: space-even;
+}
 .editar{
 background-color: rgb(230, 230, 140);
 }
+
+.card{
+  background-color: rgb(238, 221, 221);
+  padding: 10px;
+
+}
+
+
+.control{
+  background-color: rgb(191, 189, 239);
+}
+
+.box{
+  padding: 20px;
+  padding-bottom: 100px;
+}
+.field{
+  background-color: aqua;
+}
+
+form{
+  background-color: brown;
+} 
+
 </style>

@@ -1,1 +1,9 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css";
+
+
+body{
+background-color:rgb(175, 208, 208);
+    background-image:url('../cloud.png') ;
+}
+

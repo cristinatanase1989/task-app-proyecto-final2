@@ -1,6 +1,6 @@
 <template>
   <div class="section">
-    <div class="container" >
+    <div class="container">
       <form class="box" @submit.prevent="onSubmit">
         <div class="field">
           <label class="label">Name</label>
@@ -26,7 +26,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Contraseña</label>
+          <label class="label">Password</label>
           <div class="control">
             <input
               v-model="pass1"
@@ -38,7 +38,7 @@
           </div>
         </div>
         <div class="field">
-          <label class="label">Confirmar contraseña</label>
+          <label class="label">Confirm Password</label>
           <div class="control">
             <input
               v-model="pass2"
@@ -60,6 +60,9 @@
         </div>
       </form>
     </div>
+  </div>
+  <div class="fotoNorwegian">
+    <h1>este es un div</h1>
   </div>
 </template>
 <script setup>
@@ -92,31 +95,32 @@ const comprobarClave = () => {
 <style scoped>
 .container {
   /* background-color: red; */
-  
+  background-image: url("https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px;
+
+ /* padding: 20px;
+  padding-right: 800px; */
   height: calc(100vh - 70px);
   background-size: cover;
-  padding:  20px;
+  padding: 20px;
   width: 50%;
-
 }
 
-.img{
-object-fit:contain;
+.img {
+  object-fit: contain;
 }
 .label {
   background-color: rgb(217, 229, 229);
 }
 
-.input{
+.input {
   background-color: rgb(225, 237, 233);
 }
 .section {
-  background-image: url('https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg') ; 
+  
   display: flex;
   /* justify-content:right; */
   /* align-items: end; */
@@ -124,11 +128,15 @@ object-fit:contain;
   /* padding: 20px; */
   height: calc(100vh - 70px);
   background-size: cover;
-  padding:  20px;
+  padding: 20px;
   width: 50%;
 }
 
 h1 {
   background-color: aqua;
 }
+/* .box{
+  padding-left: -900px;
+} */
+
 </style>

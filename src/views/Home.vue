@@ -2,34 +2,53 @@
   <!-- el mensaje de autentificacion con el enlace de login -->
   <div class="section">
     <div class="container">
-      <article v-if="!authStore.isAuth" class="message is-danger">
+      <article v-if="!authStore.isAuth" class="message is-info">
         <div class="message-body">
-          <strong>Are you ready for take off?...Please </strong>
-          <router-link :to="{ name: 'login' }"> Login </router-link>
-          <div class="moverPlaneta">
-          <div class="planetaEntera">
-            <div class="earth">
-              <div class="earthInside">
-                <img class="plane" src="../../../plane-top-view-png-4.png" />
-              </div>
-            </div>
-          </div>
+          <strong>Are you ready for take off?...Please...</strong>
+          <strong
+            ><router-link :to="{ name: 'login' }"> Login </router-link></strong
+          >
         </div>
-      </div>
       </article>
-      <div v-else>
+      <div v-else class="LogOutCreate">
         <!-- nombre del usuario y un botton ce cerrar sesion -->
         <div class="title">Tareas {{ authStore.user.name }}</div>
-        <button @click="authStore.logout()" class="buttonIsRed">
-          Cerrar sesion
+
+<!-- <div class="buttons">
+  <button class="button is-primary is-light">Primary</button>
+  <button class="button is-link is-light">Link</button>
+</div>
+
+<div class="buttons">
+  <button class="button is-info is-light">Info</button>
+  <button class="button is-success is-light">Success</button>
+  <button class="button is-warning is-light">Warning</button>
+  <button class="button is-danger is-light">Danger</button>
+</div> -->
+
+        <!-- HOME BOTONES  -->
+        <button @click="authStore.logout()" class="button is-link">
+          <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
+          Log Out
         </button>
+
+
         <!-- formulario de los mensajes -->
 
         <a class="button is-primary">
-          <router-link :to="{ name: 'newTask' }">Crear tarea</router-link>
+          <router-link :to="{ name: 'newTask' }">Create a task</router-link>
         </a>
 
         <Task v-for="tarea in useTask.tasks" :task="tarea" />
+      </div>
+    </div>
+  </div>
+  <div class="moverPlaneta">
+    <div class="planetaEntera">
+      <div class="earth">
+        <div class="earthInside">
+          <img class="plane" src="../../../plane-top-view-png-4.png" />
+        </div>
       </div>
     </div>
   </div>
@@ -72,26 +91,23 @@ const authStore = useAuthStore();
 * {
   margin: 0;
   padding: 0;
-
 }
 .earth {
   position: relative;
-  width: 80px;
+  width: 60px;
   height: 80px;
-
 }
 
-.plane{
+.plane {
   display: flex;
   transition: 0.5s;
   animation: animate 12s linear infinite;
-
 }
 .planetaEntera {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   background-color: #1a68e5;
   overflow: hidden;
   height: 200px;
@@ -109,40 +125,71 @@ const authStore = useAuthStore();
   z-index: 1;
 }
 
-.earth:before{
-content: '';
-position: absolute;
-width: 200px;
-height: 200px;
-background-image:url('../../cloud.png');
-/* background-size: cover; */
-animation: animate 18s linear infinite;
-z-index: 50;
-left: 0;
+/* aqui son los nubes */
+.earth:before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  background-image: url("../../cloud.png");
+  /* background-size: cover; */
+  animation: animate 18s linear infinite;
+  z-index: 50;
+  /* left: 0; */
 }
-.earth img{
+.earth img {
   position: absolute;
   z-index: 1;
-  transition: 0.3s;
+  transition: 0.2s;
   pointer-events: none;
 }
 
-  @keyframes animate {
-    0% {
-      background-position: 0 0;
-    }
-    100%{
-       background-position: 719px 0px;
-    }
+@keyframes animate {
+  0% {
+    background-position: 0 0;
   }
- 
-  .moverPlaneta{
-    display: flex;
-    /* background-color: aqua; */
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
+  100% {
+    background-position: 719px 0px;
   }
+}
 
+.moverPlaneta {
+  display: flex;
+  /* background-color: aqua; */
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+}
 
+.message-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  background-color: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 180px;
+}
+body {
+  background-color: red;
+}
+
+template {
+  background-color: #1a68e5;
+}
+
+router-link:hover {
+  size: 40px;
+}
+
+/* .LogOutCreate{
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+} */
 </style>

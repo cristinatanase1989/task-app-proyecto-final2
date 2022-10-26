@@ -18,7 +18,7 @@
           v-model="title"
           class="input"
           type="text"
-          placeholder="Escribe tu ruta de vuelo..."
+          placeholder="Title..."
           required
         />
 
@@ -26,7 +26,7 @@
         <textarea
           v-model="message"
           class="textarea"
-          placeholder="Recordar..."
+          placeholder="Task description..."
           required
         >
 Description de la tarea</textarea

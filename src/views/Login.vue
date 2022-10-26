@@ -10,7 +10,7 @@
               v-model="email"
               class="input"
               type="email"
-              placeholder="Enter your mail"
+              placeholder="Enter your mail..."
             />
           </div>
           <div class="field">
@@ -34,14 +34,15 @@
       </div>
     </div>
 
-<div class="anotherAdventureFoto">
+
   <div>
     
   </div>
 
 </div>
 
-  </div>
+<div class="anotherAdventureFoto"> </div>
+
 </template>
 
 <script setup>
