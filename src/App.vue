@@ -1,6 +1,9 @@
 <template>
  
   <ul>
+    <div>
+      <img class="stewardess" src="../stewardess-with-neckerchief_602006-5635.webp" alt="">
+    </div>
       <li>
           <router-link :to="{name: 'home'}">Home</router-link>
       </li>
@@ -60,7 +63,14 @@ ul{
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content:space-evenly;
+    /* background-color: #AFD0D0; */
+}
+
+.stewardess{
+  display: flex;
+  justify-content: left;
+  height: 40px;
+  border-radius: 50%;
 }
 </style>

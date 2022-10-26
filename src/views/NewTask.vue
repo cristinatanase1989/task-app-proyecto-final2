@@ -33,6 +33,7 @@ Description de la tarea</textarea
         >
       </div>
       <div class="botonesPadreMyRoster">
+        
         <div class="control">
           <!-- enviar botton  -->
           <button type="submit" class="mt-4 button is-info">

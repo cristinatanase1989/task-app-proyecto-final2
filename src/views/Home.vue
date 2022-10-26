@@ -14,24 +14,11 @@
         <!-- nombre del usuario y un botton ce cerrar sesion -->
         <div class="title">Tareas {{ authStore.user.name }}</div>
 
-<!-- <div class="buttons">
-  <button class="button is-primary is-light">Primary</button>
-  <button class="button is-link is-light">Link</button>
-</div>
-
-<div class="buttons">
-  <button class="button is-info is-light">Info</button>
-  <button class="button is-success is-light">Success</button>
-  <button class="button is-warning is-light">Warning</button>
-  <button class="button is-danger is-light">Danger</button>
-</div> -->
-
         <!-- HOME BOTONES  -->
         <button @click="authStore.logout()" class="button is-link">
           <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
           Log Out
         </button>
-
 
         <!-- formulario de los mensajes -->
 
@@ -51,6 +38,22 @@
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <div class="content has-text-centered">
+        <p>
+          <Strong>ToDoApp</Strong> for Cabin Crew by<strong>
+            Cristina Tanase</strong
+          >
+          Ironhack student
+        </p>
+        <div> <img class="ironHackLogo" src="../../logo-ironhack-blue.png" alt="" />
+         
+        </div>
+      </div>
+    <footer class="footer">
+     
+    </footer>
   </div>
 </template>
 <script setup>
@@ -135,6 +138,7 @@ const authStore = useAuthStore();
   /* background-size: cover; */
   animation: animate 18s linear infinite;
   z-index: 50;
+
   /* left: 0; */
 }
 .earth img {
@@ -159,6 +163,7 @@ const authStore = useAuthStore();
   justify-content: center;
   align-items: center;
   padding-top: 80px;
+  padding-bottom: 150px;
 }
 
 .message-body {
@@ -166,7 +171,9 @@ const authStore = useAuthStore();
   justify-content: center;
   align-items: center;
   padding-left: 10px;
+  padding-right: 10px;
   background-color: none;
+  
 }
 .container {
   display: flex;
@@ -192,4 +199,14 @@ router-link:hover {
   justify-content: space-between;
   background-color: red;
 } */
+
+
+.ironHackLogo {
+  height: 30px;
+  
+}
+
+
+ 
+
 </style>
