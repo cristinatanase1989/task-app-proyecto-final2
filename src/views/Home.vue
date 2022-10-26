@@ -4,18 +4,18 @@
     <div class="container">
       <article v-if="!authStore.isAuth" class="message is-danger">
         <div class="message-body">
-          <strong>Are you ready for take off?...Please  </strong>
+          <strong>Are you ready for take off?...Please </strong>
           <router-link :to="{ name: 'login' }"> Login </router-link>
-          <div class="earth">
+          <div class="moverPlaneta">
+          <div class="planetaEntera">
+            <div class="earth">
               <div class="earthInside">
-                
-                  <img src="../../../plane-top-view-png-4.png">
-
+                <img class="plane" src="../../../plane-top-view-png-4.png" />
               </div>
             </div>
-
-
+          </div>
         </div>
+      </div>
       </article>
       <div v-else>
         <!-- nombre del usuario y un botton ce cerrar sesion -->
@@ -45,7 +45,7 @@ import { useTaskStore } from "../store/task";
 
 const tareas = async () => {
   const response = await getTasks();
-   useTask.setTask(response);
+  useTask.setTask(response);
   console.log(response);
 };
 tareas();
@@ -60,49 +60,89 @@ const authStore = useAuthStore();
   border-bottom: none;
 }
 
-.buttonIsRed:hover{
+.buttonIsRed:hover {
   background-color: rgb(80, 57, 193);
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
-
 
 /* EARTH */
 
 /* aqui es todo  +  */
-.earth{
 
-margin: 0;
-padding: 0;
-position: relative;
+* {
+  margin: 0;
+  padding: 0;
+
+}
+.earth {
+  position: relative;
+  width: 80px;
+  height: 80px;
+
+}
+
+.plane{
+  display: flex;
+  transition: 0.5s;
+  animation: animate 12s linear infinite;
+
+}
+.planetaEntera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: #1a68e5;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  background-image: url("../../../earth.png");
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+  /* hasta aqui correcto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  animation: animate 12s linear infinite;
+  z-index: 1;
+}
+
+.earth:before{
+content: '';
+position: absolute;
 width: 200px;
 height: 200px;
-
-/* hasten;a aqui correcto */
-/* overflow: hidden; */
+background-image:url('../../cloud.png');
+/* background-size: cover; */
+animation: animate 18s linear infinite;
+z-index: 50;
+left: 0;
+}
+.earth img{
+  position: absolute;
+  z-index: 1;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
-
-/* aqui es el body */
-.earthInside{
-
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 30vh;
-background-color: blue;
-background-image: url('../../../earth.png'); 
-/* la imajen no functiona para colgarla encima  */
-background-size: cover;
-border-radius: 50%;
-box-shadow: 0 0 50px rgba(0,0,0,0.85);
-
-/* me quede al minuto 1.53 */
-
-/* hasta aqui correcto */
-
-
-}
-
+  @keyframes animate {
+    0% {
+      background-position: 0 0;
+    }
+    100%{
+       background-position: 719px 0px;
+    }
+  }
+ 
+  .moverPlaneta{
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+  }
 
 
 </style>
