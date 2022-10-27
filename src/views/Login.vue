@@ -4,7 +4,19 @@
     <div class="section">
       <div class="container">
         <form @submit.prevent="onSubmit">
-          <label class="label">Sing In</label>
+          <label class="label">  
+
+            <span class="icon-text">
+  <span class="icon">
+    <i class="fa-solid fa-plane"></i>
+  </span>
+  </span>
+
+
+            <!-- <i class="fa-solid fa-plane"> -->
+
+            <!-- </i> -->
+            Sing In</label>
           <div class="field">
             <!-- el placeholder se ve muy poco casi invisible....porque?????? -->
             <input
@@ -30,6 +42,12 @@
                 Log in
               </button>
             </div>
+            <!--
+              este es ejemplo de button con bulma y font awesome <button class="button">
+    <span class="icon">
+      <i class="fa-solid fa-ticket"></i>
+    </span>
+  </button> -->
           </div>
         </form>
       </div>

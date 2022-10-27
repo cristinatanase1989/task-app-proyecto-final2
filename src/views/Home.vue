@@ -3,11 +3,11 @@
   <div class="section">
     <div class="container">
       <article v-if="!authStore.isAuth" class="message is-info">
-        <div class="message-body">
-          <strong>Are you ready for take off?...Please...</strong>
-          <strong
-            ><router-link :to="{ name: 'login' }"> Login </router-link></strong
-          >
+        <div class="message-body has-text-weight-bold">
+          Are you ready for take off?...Please...
+          
+         <router-link :to="{ name: 'login' }"> Login </router-link>
+          
         </div>
        
       </article>
@@ -34,9 +34,9 @@
         
           </a>
         </div>
-          <div class="colums is-multiline is-3-desktop">
+          <div class="colums is-multiline">
             <Task
-              class="column is-10-mobile is-3-desktop column-style"
+              class="column is-10-mobile column-style"
               v-for="tarea in useTask.tasks"
               :task="tarea"
             />
@@ -58,10 +58,11 @@
   <div>
     <div class="content has-text-centered norwegianFoto">
       <p>
-        <Strong>ToDoApp</Strong> for Cabin Crew by<strong>
-          Cristina Tanase</strong
-        >
-        Ironhack student
+
+       <span class="has-text-weight-bold">ToDoApp</span>  for Cabin Crew by
+       <span class="has-text-weight-bold">Cristina Tanase </span> 
+        
+       <span class="has-text-weight-bold">Ironhack</span> student.
       </p>
       <div>
         <img
@@ -190,14 +191,14 @@ const authStore = useAuthStore();
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: none;
+  
 }
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
-  padding-left: 180px;
+  
 }
 body {
   background-color: red;
@@ -208,9 +209,7 @@ template {
   background-color: #1a68e5;
 }
 
-router-link:hover {
-  size: 40px;
-}
+
 
 /* .LogOutCreate{
   display: flex;
@@ -239,25 +238,23 @@ router-link:hover {
   width: 48%;
 }
 
-/* .card-content{
+ /* .card-content{
   background-image: url('../imajenes/norwegian.jpg');
   width: 100%;
   height: 100%;
-} */
-/* 
+} 
+  */
 .card{
   background-image: url('../imajenes/norwegian.jpg');
   width: 100%;
   height: 100%;
+  color:white !important;
   
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-repeat: no-repeat;
   background-size: contain;
 
   
-} */
+} 
 
 .botonesEditarTask{
  

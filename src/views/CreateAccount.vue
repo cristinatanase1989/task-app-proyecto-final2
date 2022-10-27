@@ -1,72 +1,74 @@
 <template>
   <div class="section">
     <div class="container">
-      <form class="box" @submit.prevent="onSubmit">
-        <div class="field">
-          <label class="label">Name</label>
-          <div class="control">
-            <input
-              v-model="name"
-              class="input"
-              type="text"
-              placeholder="Name"
-            />
-          </div>
+      <div class="columns">
+        <div class="column is-6">
+          <form class="box" @submit.prevent="onSubmit">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input
+                  v-model="name"
+                  class="input"
+                  type="text"
+                  placeholder="Name"
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input
+                  v-model="email"
+                  class="input"
+                  type="email"
+                  placeholder="e.g. alex@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input
+                  v-model="pass1"
+                  class="input"
+                  type="password"
+                  placeholder="*******"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Confirm Password</label>
+              <div class="control">
+                <input
+                  v-model="pass2"
+                  class="input"
+                  type="password"
+                  placeholder="*******"
+                  required
+                />
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input
+                  class="button is-link"
+                  type="submit"
+                  placeholder="Text input"
+                />
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control">
-            <input
-              v-model="email"
-              class="input"
-              type="email"
-              placeholder="e.g. alex@example.com"
-              required
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Password</label>
-          <div class="control">
-            <input
-              v-model="pass1"
-              class="input"
-              type="password"
-              placeholder="*******"
-              required
-            />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Confirm Password</label>
-          <div class="control">
-            <input
-              v-model="pass2"
-              class="input"
-              type="password"
-              placeholder="*******"
-              required
-            />
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <input
-              class="button is-link"
-              type="submit"
-              placeholder="Text input"
-            />
-          </div>
-        </div>
-      </form>
+        <div class="column is-6">
+          <img src="../imajenes/norwegian.jpg" alt="">
+           </div>
+      </div>
     </div>
   </div>
-  <div class="section">
-    <div class="container norwegianAvion">
-      <form class="box"></form>
-  </div>
-</div>
-
+ 
 </template>
 <script setup>
 import { ref } from "vue";
@@ -104,7 +106,7 @@ const comprobarClave = () => {
   align-items: center;
   flex-direction: column;
 
- /* padding: 20px;
+  /* padding: 20px;
   padding-right: 800px; */
   height: calc(100vh - 70px);
   background-size: cover;
@@ -112,9 +114,13 @@ const comprobarClave = () => {
   width: 50%;
 }
 
-.img {
-  object-fit: contain;
+img {
+  object-fit: cover;
+  height: 100%;
+
+
 }
+
 .label {
   background-color: rgb(217, 229, 229);
 }
@@ -123,16 +129,23 @@ const comprobarClave = () => {
   background-color: rgb(225, 237, 233);
 }
 .section {
-  
   display: flex;
-  /* justify-content:right; */
+  justify-content:center;
   /* align-items: end; */
   /* flex-direction: column; */
   /* padding: 20px; */
   height: calc(100vh - 70px);
   background-size: cover;
   padding: 20px;
-  width: 50%;
+ 
+}
+
+.columns{
+  width: 70%;
+}
+.column{
+  height: 100%;
+
 }
 
 h1 {
@@ -142,19 +155,11 @@ h1 {
   padding-left: -900px;
 } */
 
-.norwegianAvion{
+.norwegianAvion {
   width: 400px;
   height: 400px;
   background-color: red;
- 
 }
 
-.container{
-   display: flex;
-     justify-content: space-around;
-   flex-direction: row;
-  align-items: center;
-  background-color: blue;
-}
 
 </style>
