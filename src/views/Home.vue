@@ -9,24 +9,40 @@
             ><router-link :to="{ name: 'login' }"> Login </router-link></strong
           >
         </div>
+       
       </article>
+
+      
       <div v-else class="LogOutCreate">
         <!-- nombre del usuario y un botton ce cerrar sesion -->
         <div class="title">Tareas {{ authStore.user.name }}</div>
 
         <!-- HOME BOTONES  -->
-        <button @click="authStore.logout()" class="button is-link">
-          <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
-          Log Out
-        </button>
+        <div class="section is-10-mobile"> 
+        <div class="buttons is-grouped linia-botones">
+          <button @click="authStore.logout()" class="button is-link button-margen">
+            <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
+            Log Out
+          </button>
 
-        <!-- formulario de los mensajes -->
+          <!-- formulario de los mensajes -->
 
-        <a class="button is-primary">
-          <router-link :to="{ name: 'newTask' }">Create a task</router-link>
-        </a>
-
-        <Task v-for="tarea in useTask.tasks" :task="tarea" />
+          <a class="button is-primary">
+            <router-link :to="{ name: 'newTask' }"
+              >Create a task</router-link
+            >
+        
+          </a>
+        </div>
+          <div class="colums is-multiline is-3-desktop">
+            <Task
+              class="column is-10-mobile is-3-desktop column-style"
+              v-for="tarea in useTask.tasks"
+              :task="tarea"
+            />
+          </div> 
+        </div>
+        
       </div>
     </div>
   </div>
@@ -41,19 +57,21 @@
   </div>
   <div>
     <div class="content has-text-centered">
-        <p>
-          <Strong>ToDoApp</Strong> for Cabin Crew by<strong>
-            Cristina Tanase</strong
-          >
-          Ironhack student
-        </p>
-        <div> <img class="ironHackLogo" src="../imajenes/logo-ironhack-blue.png" alt="" />
-         
-        </div>
+      <p>
+        <Strong>ToDoApp</Strong> for Cabin Crew by<strong>
+          Cristina Tanase</strong
+        >
+        Ironhack student
+      </p>
+      <div>
+        <img
+          class="ironHackLogo"
+          src="../imajenes/logo-ironhack-blue.png"
+          alt=""
+        />
       </div>
-    <footer class="footer">
-     
-    </footer>
+    </div>
+    <footer class="footer"></footer>
   </div>
 </template>
 <script setup>
@@ -173,7 +191,6 @@ const authStore = useAuthStore();
   padding-left: 10px;
   padding-right: 10px;
   background-color: none;
-  
 }
 .container {
   display: flex;
@@ -184,6 +201,7 @@ const authStore = useAuthStore();
 }
 body {
   background-color: red;
+  
 }
 
 template {
@@ -200,13 +218,21 @@ router-link:hover {
   background-color: red;
 } */
 
-
 .ironHackLogo {
   height: 30px;
-  
 }
 
+.column-style {
+  margin-bottom: 30px;
+  width: 100%;
+}
 
- 
-
+.linia-botones{
+  display: flex;
+  justify-content: center;
+}
+.button-margen{
+  padding: 5px;
+  width: 48%;
+}
 </style>
