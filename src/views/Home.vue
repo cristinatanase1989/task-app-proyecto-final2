@@ -34,7 +34,7 @@
     <div class="planetaEntera">
       <div class="earth">
         <div class="earthInside">
-          <img class="plane" src="../../../plane-top-view-png-4.png" />
+          <img class="plane" src="../imajenes/plane-top-view-png-4.png" />
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
           >
           Ironhack student
         </p>
-        <div> <img class="ironHackLogo" src="../../logo-ironhack-blue.png" alt="" />
+        <div> <img class="ironHackLogo" src="../imajenes/logo-ironhack-blue.png" alt="" />
          
         </div>
       </div>
@@ -115,7 +115,7 @@ const authStore = useAuthStore();
   overflow: hidden;
   height: 200px;
   width: 200px;
-  background-image: url("../../../earth.png");
+  background-image: url("../imajenes/earth.png");
   background-size: cover;
   border-radius: 50%;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
@@ -134,7 +134,7 @@ const authStore = useAuthStore();
   position: absolute;
   width: 400px;
   height: 200px;
-  background-image: url("../../cloud.png");
+  background-image: url("../imajenes/cloud.png");
   /* background-size: cover; */
   animation: animate 18s linear infinite;
   z-index: 50;

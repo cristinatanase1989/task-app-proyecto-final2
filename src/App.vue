@@ -2,7 +2,7 @@
  
   <ul>
     <div>
-      <img class="stewardess" src="../stewardess-with-neckerchief_602006-5635.webp" alt="">
+      <img class="stewardess" src="./imajenes/stewardess-with-neckerchief_602006-5635.webp" alt="">
     </div>
       <li>
           <router-link :to="{name: 'home'}">Home</router-link>
