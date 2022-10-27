@@ -23,11 +23,11 @@ Description de la tarea</textarea
       </div>
       <div class="control">
         <!-- enviar botton  -->
-        <button type="submit" class="mt-4 button is-info">Submit</button>
+        <button type="submit" class="mt-4 button is-info botonesEditarTask">Submit</button>
          <!-- nuevo -->
-         <button class="mt-4 button is-link">Save changes</button>
+         <button class="mt-4 button is-link botonesEditarTask">Save changes</button>
         <!-- cancelar botton task -->
-        <button @click="cancelarTarea" class="mt-4 button is-danger">
+        <button @click="cancelarTarea" class="mt-4 button is-danger botonesEditarTask">
           Cancel
         </button>
   
@@ -68,8 +68,9 @@ Description de la tarea</textarea
         </div>
       </div>
     </form>
+    
     <footer class="card-footer">
-      <button @click="editar = true" class="button is-warning is-active">Edit Task</button>
+      <button @click="editar = true" class="button is-warning is-active editarTresBotones">Edit Task</button>
       <!-- <RouterLink
         :to="{ name: 'editTask', params: { id: task.id } }"
         class="card-footer-item"
@@ -77,9 +78,9 @@ Description de la tarea</textarea
       > -->
 
        <!-- nuevo -->
-       <button @click="completarTarea" class="button is-success">Complet task</button>
+       <button @click="completarTarea" class="button is-success editarTresBotones">Complet task</button>
 
-      <button @click="borrarTarea" class="button is-danger is-active">Delete</button>
+      <button @click="borrarTarea" class="button is-danger is-active editarTresBotones">Delete</button>
     </footer>
   </div>
 </template>
@@ -145,9 +146,9 @@ const editarTarea = () => {
 
 
 .card-footer{
-  background-color: red;
+  
   display: flex;
-  justify-content: space-even;
+ 
 }
 .editar{
 background-color: rgb(230, 230, 140);
@@ -175,5 +176,22 @@ background-color: rgb(230, 230, 140);
 form{
   background-color: brown;
 } 
+.editarTresBotones{
+  margin: 5px;
+  margin-bottom: 0px;
+  background-color: red;
+ 
+}
+
+.card-content{
+  margin: 80px;
+}
+
+.botonesEditarTask{
+  border-left: 10px;
+  margin: 5px;
+  width: 70px;
+  height: 25px;
+}
 
 </style>

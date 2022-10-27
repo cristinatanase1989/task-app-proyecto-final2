@@ -61,9 +61,12 @@
       </form>
     </div>
   </div>
-  <div class="fotoNorwegian">
-    <h1>este es un div</h1>
+  <div class="section">
+    <div class="container norwegianAvion">
+      <form class="box"></form>
   </div>
+</div>
+
 </template>
 <script setup>
 import { ref } from "vue";
@@ -95,7 +98,7 @@ const comprobarClave = () => {
 <style scoped>
 .container {
   /* background-color: red; */
-  background-image: url("https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg");
+  /* background-image: url("https://i.etsystatic.com/24291756/r/il/da6a96/2883628396/il_1588xN.2883628396_btm9.jpg"); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,5 +141,20 @@ h1 {
 /* .box{
   padding-left: -900px;
 } */
+
+.norwegianAvion{
+  width: 400px;
+  height: 400px;
+  background-color: red;
+ 
+}
+
+.container{
+   display: flex;
+     justify-content: space-around;
+   flex-direction: row;
+  align-items: center;
+  background-color: blue;
+}
 
 </style>

@@ -18,16 +18,16 @@
         <div class="title">Tareas {{ authStore.user.name }}</div>
 
         <!-- HOME BOTONES  -->
-        <div class="section is-10-mobile"> 
+        <div class="section is-10-mobile contentCardImg"> 
         <div class="buttons is-grouped linia-botones">
-          <button @click="authStore.logout()" class="button is-link button-margen">
+          <button @click="authStore.logout()" class="button is-link button-margen botonesEditarTask">
             <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
             Log Out
           </button>
 
           <!-- formulario de los mensajes -->
 
-          <a class="button is-primary">
+          <a class="button is-primary botonesEditarTask">
             <router-link :to="{ name: 'newTask' }"
               >Create a task</router-link
             >
@@ -56,7 +56,7 @@
     </div>
   </div>
   <div>
-    <div class="content has-text-centered">
+    <div class="content has-text-centered norwegianFoto">
       <p>
         <Strong>ToDoApp</Strong> for Cabin Crew by<strong>
           Cristina Tanase</strong
@@ -96,7 +96,7 @@ const authStore = useAuthStore();
 <style scoped>
 .buttonIsRed {
   color: black;
-  background-color: red;
+  background-color: rgb(236, 199, 199);
   border-bottom: none;
 }
 
@@ -230,9 +230,40 @@ router-link:hover {
 .linia-botones{
   display: flex;
   justify-content: center;
+  padding: 1px;
+  margin-bottom: 0;
+  margin-left: -100px;
 }
 .button-margen{
   padding: 5px;
   width: 48%;
+}
+
+/* .card-content{
+  background-image: url('../imajenes/norwegian.jpg');
+  width: 100%;
+  height: 100%;
+} */
+/* 
+.card{
+  background-image: url('../imajenes/norwegian.jpg');
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  
+} */
+
+.botonesEditarTask{
+ 
+  margin: 5px;
+  width: 70px;
+  height: 25px;
+ 
 }
 </style>

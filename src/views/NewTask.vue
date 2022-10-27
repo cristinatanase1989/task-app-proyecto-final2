@@ -8,11 +8,11 @@
   <!-- <div>{{props.post.message}}</div> -->
 
   <!-- </div> -->
-
+<div class="container">
   <div class="foto mt-5">
     <form @submit.prevent="onSubmit">
       <div class="control">
-        <label class="label">Título*</label>
+        <label class="label">Títle*</label>
 
         <input
           v-model="title"
@@ -22,11 +22,11 @@
           required
         />
 
-        <label class="label">Description de la tarea*</label>
+        <label class="label">Task description...*</label>
         <textarea
           v-model="message"
           class="textarea"
-          placeholder="Task description..."
+          placeholder="Things to remember..."
           required
         >
 Description de la tarea</textarea
@@ -36,13 +36,13 @@ Description de la tarea</textarea
         
         <div class="control">
           <!-- enviar botton  -->
-          <button type="submit" class="mt-4 button is-info">
-            Añadir tarea
+          <button type="submit" class="mt-4 button is-info espacioBotones">
+            Add Task
           </button>
 
           <!-- cancelar botton task -->
-          <button @click="cancelarTarea" class="mt-4 button is-danger">
-            Cancelar
+          <button @click="cancelarTarea" class="mt-4 button is-danger espacioBotones">
+            Cancel
           </button>
 
         </div>
@@ -52,6 +52,7 @@ Description de la tarea</textarea
   <form>
     <div class="fotoAzafata"></div>
   </form>
+</div>
 </template>
 
 <script setup>
@@ -108,10 +109,12 @@ header {
 }
 .fotoAzafata {
   background-image: url("https://i.etsystatic.com/24291756/r/il/efb60b/4112987344/il_1588xN.4112987344_5smm.jpg");
-  height: calc(100vh - 70px);
+  height: calc(100vh - 90px);
   background-size: cover;
-  padding: 20px;
-  width: 50%;
+  padding: 10px;
+  width: 60%;
+ 
+
   /* padding-left: 20%; */
 }
 
@@ -129,10 +132,24 @@ textarea {
 /* aqui no quiere seprarse si le estoy diciendo al padre que sea space-between */
   justify-content:space-between; 
    align-items: center;
-  padding: 20px;
+
+
 }
 
-/* .control{
- 
-} */
+
+.input{
+  max-width: 50%;
+}
+
+.textarea{
+  max-width: 50%;
+  min-width: 50%;
+}
+
+.espacioBotones{
+  
+  margin: 5px;
+}
+
+
 </style>
