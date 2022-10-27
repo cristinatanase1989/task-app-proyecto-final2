@@ -34,12 +34,14 @@
         
           </a>
         </div>
-          <div class="colums is-multiline">
-            <Task
-              class="column is-10-mobile column-style"
-              v-for="tarea in useTask.tasks"
+          <div class="columns is-multiline ">
+            <div class="m-6 column is-10-mobile is-3-desktop is-4-tablet column-style" v-for="tarea in useTask.tasks" > 
+             <Task
+    
               :task="tarea"
             />
+            </div>
+           
           </div> 
         </div>
         
@@ -60,9 +62,13 @@
       <p>
 
        <span class="has-text-weight-bold">ToDoApp</span>  for Cabin Crew by
-       <span class="has-text-weight-bold">Cristina Tanase </span> 
+       <span class="has-text-weight-bold">Cristina Tanase<button class="button graduation">
+    <span class="icon is-small">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </span>
+  </button></span> 
         
-       <span class="has-text-weight-bold">Ironhack</span> student.
+       <span class="has-text-weight-bold">   *Ironhack</span> student.
       </p>
       <div>
         <img
@@ -182,15 +188,16 @@ const authStore = useAuthStore();
   justify-content: center;
   align-items: center;
   padding-top: 80px;
-  padding-bottom: 150px;
+  padding-bottom: 140px;
 }
 
 .message-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+ 
+  padding-left: 40px;
+  padding-right: 40px;
   
 }
 .container {
@@ -223,7 +230,7 @@ template {
 
 .column-style {
   margin-bottom: 30px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .linia-botones{
@@ -245,16 +252,36 @@ template {
 } 
   */
 .card{
-  background-image: url('../imajenes/norwegian.jpg');
-  width: 100%;
+  /* background-image: url('../imajenes/1.webp'); */
+  /* width: 100%; */
   height: 100%;
-  color:white !important;
-  
+  text-shadow: 1px 3px 7px rgb(26, 22, 22);
+/*   
   background-repeat: no-repeat;
-  background-size: contain;
-
-  
+  background-size: cover; */
+    
 } 
+.card::before{
+  content:'';
+  background-image: url('../imajenes/1.webp');
+  color:white;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
+
+} 
+/* .card::after{
+  background-image: url('../imajenes/1.webp');
+} */
+
+
+
 
 .botonesEditarTask{
  
@@ -263,4 +290,13 @@ template {
   height: 25px;
  
 }
+.graduation{
+  margin-left:15px;
+  padding-bottom: 10px;
+  margin-right: 10px;
+}
+
+/* .is-multiline{
+
+} */
 </style>
