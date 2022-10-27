@@ -3,7 +3,7 @@
 
 
 body{
- background-color:rgb(103, 185, 208);
+ background-color:rgb(71, 174, 202);
    background-image:url('./imajenes/cloud.png') ;
  /*    background-image:url("../imajenes/aircraft-routing-featured-1000x1000.jpg")  */
     
@@ -16,7 +16,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(174, 204, 212);
+    /* background-color: rgb(42, 138, 165); */
 }
 
     

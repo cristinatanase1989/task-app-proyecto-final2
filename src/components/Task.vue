@@ -23,11 +23,11 @@ Description de la tarea</textarea
       </div>
       <div class="control">
         <!-- enviar botton  -->
-        <button type="submit" class="mt-4 button is-info botonesEditarTask">Submit</button>
+        <button type="submit" class="mt-4 button is-info is-light botonesEditarTask">Submit</button>
          <!-- nuevo -->
-         <button class="mt-4 button is-link botonesEditarTask">Save changes</button>
+         <button class="mt-4 button is-link is-light botonesEditarTask">Save changes</button>
         <!-- cancelar botton task -->
-        <button @click="cancelarTarea" class="mt-4 button is-danger botonesEditarTask">
+        <button @click="cancelarTarea" class="mt-4 button is-danger is-light botonesEditarTask">
           Cancel
         </button>
   
@@ -70,7 +70,7 @@ Description de la tarea</textarea
     </form>
     
     <footer class="card-footer">
-      <button @click="editar = true" class="button is-warning is-active editarTresBotones">Edit Task</button>
+      <button @click="editar = true" class="button is-warning is-light editarTresBotones">Edit Task</button>
       <!-- <RouterLink
         :to="{ name: 'editTask', params: { id: task.id } }"
         class="card-footer-item"
@@ -78,9 +78,9 @@ Description de la tarea</textarea
       > -->
 
        <!-- nuevo -->
-       <button @click="completarTarea" class="button is-success editarTresBotones">Complet task</button>
+       <button @click="completarTarea" class="button is-sucess is-light editarTresBotones">Complet task</button>
 
-      <button @click="borrarTarea" class="button is-danger is-active editarTresBotones">Delete</button>
+      <button @click="borrarTarea" class="button is-danger is-light is-active editarTresBotones">Delete</button>
     </footer>
   </div>
 </template>
@@ -162,7 +162,7 @@ background-color: rgb(230, 230, 140);
 
 
 .control{
-  background-color: rgb(191, 189, 239);
+  background-color: rgb(244, 219, 176);
 }
 
 .box{
@@ -179,8 +179,10 @@ form{
 .editarTresBotones{
   margin: 5px;
   margin-bottom: 0px;
-  background-color: red;
- 
+}
+
+.editarTresBotones:hover{
+  background-color: rgb(151, 227, 237);
 }
 
 .card-content{

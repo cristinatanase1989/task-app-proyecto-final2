@@ -15,11 +15,12 @@
       
       <div v-else class="LogOutCreate">
         <!-- nombre del usuario y un botton ce cerrar sesion -->
-        <div class="title">Tareas {{ authStore.user.name }}</div>
+        <div class="title">Welcome {{ authStore.user.name }}</div>
 
         <!-- HOME BOTONES  -->
         <div class="section is-10-mobile contentCardImg"> 
         <div class="buttons is-grouped linia-botones">
+         
           <button @click="authStore.logout()" class="button is-link button-margen botonesEditarTask">
             <!-- <span class="icon"> <i class="fab fa-airplane"></i> </span> -->
             Log Out
@@ -29,10 +30,10 @@
 
           <a class="button is-primary botonesEditarTask">
             <router-link :to="{ name: 'newTask' }"
-              >Create a task</router-link
+              >Create task</router-link
             >
-        
           </a>
+
         </div>
           <div class="columns is-multiline ">
             <div class="m-6 column is-10-mobile is-3-desktop is-4-tablet column-style" v-for="tarea in useTask.tasks" > 
@@ -108,7 +109,7 @@ const authStore = useAuthStore();
 }
 
 .buttonIsRed:hover {
-  background-color: rgb(80, 57, 193);
+  background-color: rgb(125, 107, 214);
   text-transform: capitalize;
 }
 
@@ -136,7 +137,7 @@ const authStore = useAuthStore();
   justify-content: center;
   align-items: center;
 
-  background-color: #1a68e5;
+  background-color: #155ac9;
   overflow: hidden;
   height: 200px;
   width: 200px;
@@ -238,7 +239,7 @@ template {
   justify-content: center;
   padding: 1px;
   margin-bottom: 0;
-  margin-left: -100px;
+  margin-right: 720px;
 }
 .button-margen{
   padding: 5px;
@@ -286,6 +287,7 @@ template {
 .botonesEditarTask{
  
   margin: 5px;
+ 
   width: 70px;
   height: 25px;
  
@@ -299,4 +301,9 @@ template {
 /* .is-multiline{
 
 } */
+
+.title{
+ margin-left: 40px;
+
+}
 </style>
